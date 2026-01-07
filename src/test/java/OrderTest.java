@@ -34,7 +34,7 @@ public class OrderTest {
    }
 
    @Test
-   @DisplayName("Validate order request schema")
+   @DisplayName("Validate order request with wrong date")
    void validateOrderRequestWithWrongDate() {
       OrderRequest request =
           OrderRequest.buildOrderRequest(
