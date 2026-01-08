@@ -31,6 +31,7 @@ public class OrderTest {
                   "schemas/order-schema.json"
               )
           );
+      new OrderService().deleteOrder(1);
    }
 
    @Test
@@ -86,6 +87,8 @@ public class OrderTest {
           .then()
           .statusCode(200)
           .body("message", equalTo(String.valueOf(orderId)));
+
+      new OrderService().getOrder(orderId).then().statusCode(404);
    }
 
    @Test

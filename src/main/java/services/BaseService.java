@@ -5,7 +5,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-public class BaseService {
+public abstract class BaseService {
 
    private final String baseUrl = System.getProperty("baseUrl",
        "https://petstore.swagger.io/v2/store");
@@ -32,5 +32,7 @@ public class BaseService {
           .pathParam("orderId", orderId)
           .delete(path + "/{orderId}");
    }
+
+   abstract String getUrl();
 
 }
